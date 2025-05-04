@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>主页面</title>
+    <link rel="stylesheet" href="css/index.css" />
+</head>
+
+<body>
+    <header>
+        <h1>四大发明可视化</h1>
+        <div class="showTime">当前时间:2020年3月17-0时54分14秒</div>
+        <script>
+            var t = null;
+            t = setTimeout(time, 1000); //開始运行
+            function time() {
+                clearTimeout(t); //清除定时器
+                dt = new Date();
+                var y = dt.getFullYear();
+                var mt = dt.getMonth() + 1;
+                var day = dt.getDate();
+                var h = dt.getHours(); //获取时
+                var m = dt.getMinutes(); //获取分
+                var s = dt.getSeconds(); //获取秒
+                document.querySelector(".showTime").innerHTML =
+                    "北京时间：" +
+                    y +
+                    "年" +
+                    mt +
+                    "月" +
+                    day +
+                    "日-" +
+                    h +
+                    "时" +
+                    m +
+                    "分" +
+                    s +
+                    "秒";
+                t = setTimeout(time, 1000); //设定定时器，循环运行
+            }
+        </script>
+    </header>
+    <section class="mainbox">
+
+        <!-- 左边第一个区域 -->
+        <div class="column">
+            <!-- 柱状图1.1 -->
+            <div class="panel bar">
+
+                <a href="../指南针/index.html" target="_blank"><img src="images/司南.png" alt="指南针" title="指南针"></a>
+
+
+                <div class="chart"></div>
+                <div class="panel-footer"></div>
+            </div>
+
+            <!-- //饼状图 -->
+            <div class="panel pie">
+                <a href="../造纸术/index.html" target="_blank"><img src="images/造纸术.png" alt="造纸术" title="造纸术"></a>
+                <div class="chart"></div>
+                <div class="panel-footer"></div>
+            </div>
+        </div>
+        <!-- //中间的区域 -->
+        <div class="column">
+
+            <style>
+                #main {
+                    width: 80%;
+                    /* 相对宽度 */
+                    max-width: 600px;
+                    /* 最大宽度缩小 */
+                    height: 300px;
+                    /* 高度缩小 */
+                    margin: 20px auto;
+                    border-radius: 8px;
+                    background: rgba(255, 255, 255, 0.04);
+                    /* 半透明白色背景 */
+                    backdrop-filter: blur(4px);
+                    /* 毛玻璃效果 */
+                    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+                    /* 更柔和的阴影 */
+                    border: 1px solid rgba(255, 255, 255, 0.3);
+                    /* 浅色边框 */
+                }
+            </style>
+
+            <div id="main">
+                <div class="panel bar">
+                    <div class="chart"></div>
+                    <div class="panel-footer"></div>
+                </div>
+            </div>
+            <div class="map">
+                <div class="chart"></div>
+                <div class="map1"></div>
+                <div class="map2"></div>
+                <div class="map3"></div>
+            </div>
+        </div>
+        <!-- //右边的图形 -->
+        <div class="column">
+            <!-- //3.1柱状图 -->
+            <div class="panel bar1">
+                <a href="../火药/index.html" target="_blank"><img src="images/火药.png" alt="火药" title="火药"></a>
+
+                <div class="chart"></div>
+                <div class="panel-footer"></div>
+            </div>
+
+            <!-- //饼状图 -->
+            <div class="panel pie1">
+                <a href="../印刷术/index.html " target="_blank"><img src="images/印刷术.png" alt="印刷术" title="印刷术"></a>
+
+                <div class="chart"></div>
+                <div class="panel-footer"></div>
+            </div>
+        </div>
+
+    </section>
+    <script src="js/flexible.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/echarts.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/china.js"></script>
+    <script src="js/myMap.js"></script>
+    <script src="js/柱状图.js"></script>
+    <!-- <script src="js/myMap1.js"></script> -->
+</body>
+
+</html>
